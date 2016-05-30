@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
+  respond_to :json
+
   def index
-    render nothing: true
+    respond_with Item.all
+  end
+
+  def show
+    respond_with Item.find(params[:id])
   end
 end
 
